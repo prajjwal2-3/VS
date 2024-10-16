@@ -1,6 +1,6 @@
 // submit.js
 import { useStore } from './store';
-
+import {motion} from 'framer-motion'
 export const SubmitButton = () => {
     const {
         nodes,
@@ -30,7 +30,14 @@ export const SubmitButton = () => {
     }
     return (
         <div className="absolute w-full z-[5]">
-            <button type="submit" className="p-2 m-4 rounded-lg  text-white font-semibold bg-purple-500 " onClick={getResponse}>Submit</button>
+           <motion.button
+        className="absolute top-4 right-4 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={getResponse}
+      >
+        Submit
+      </motion.button>
         </div>
     );
 }
